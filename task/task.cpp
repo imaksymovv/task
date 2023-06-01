@@ -24,7 +24,7 @@ int main()
       arr.insert(input);
   }
   int min_difference = 10000000;  // O(1)
-  for (auto it = arr.begin(); it != --arr.end(); it++) {
+  for (auto it = arr.begin(); it != --arr.end();) {
     int difference = std::abs(*it - *(++it));
     if (difference < min_difference) {
       min_difference = difference;
