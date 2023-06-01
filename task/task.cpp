@@ -17,15 +17,15 @@ int main()
       std::cout << "n must be in range of 1 to 100000" << std::endl;
     }
   }
-  std::set<int> arr;
+  std::multiset<int> arr;
   int input;
   for (int i = 0; i < n; i++) {
       std::cin >> input;
       arr.insert(input);
   }
   int min_difference = 10000000;  // O(1)
-  for (auto it = arr.begin()++; it != arr.end()--;) {
-    int difference = std::abs(*it - *(it++));
+  for (auto it = arr.begin(); it != --arr.end(); it++) {
+    int difference = std::abs(*it - *(++it));
     if (difference < min_difference) {
       min_difference = difference;
     }
